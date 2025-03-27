@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projeto2.controllers.HomeController"
+            style="-fx-font-family: 'Arial';">
+
+    <!-- Topo da tela -->
+    <top>
+        <HBox style="-fx-background-color: #4CAF50; -fx-padding: 15;"
+              spacing="10" alignment="CENTER_LEFT">
+            <!-- Corrigindo o posicionamento do ImageView no HBox -->
+            <ImageView fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" />
+            <Label text="Sistema da Clínica de Fisioterapia"
+                   style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <!-- Barra lateral com menu -->
+    <left>
+        <VBox spacing="15" alignment="TOP_CENTER" style="-fx-background-color: #f5f5f5; -fx-padding: 20;">
+            <Button text="🏥 Agendar Consulta"
+                    style="-fx-font-size: 16px; -fx-background-color: #4CAF50; -fx-text-fill: white;"
+                    maxWidth="200"
+                    onAction="#handleAgendarConsulta" />
+            <Button text="📋 Histórico de Pacientes"
+                    style="-fx-font-size: 16px; -fx-background-color: #4CAF50; -fx-text-fill: white;"
+                    maxWidth="200"
+                    onAction="#handleHistoricoPacientes" />
+            <Button text="👨‍⚕️ Equipe"
+                    style="-fx-font-size: 16px; -fx-background-color: #4CAF50; -fx-text-fill: white;"
+                    maxWidth="200"
+                    onAction="#handleEquipe" />
+            <Button text="⚙️ Configurações"
+                    style="-fx-font-size: 16px; -fx-background-color: #E0E0E0; -fx-text-fill: #333;"
+                    maxWidth="200"
+                    onAction="#handleConfiguracoes" />
+            <Button text="🚪 Sair"
+                    style="-fx-font-size: 16px; -fx-background-color: #FF6347; -fx-text-fill: white;"
+                    maxWidth="200"
+                    onAction="#handleLogout" />
+        </VBox>
+    </left>
+
+    <!-- Centro da tela -->
+    <center>
+        <VBox spacing="30" alignment="CENTER" style="-fx-padding: 50; -fx-background-color: #FFFFFF;">
+            <Label text="Bem-vindo(a) ao Sistema da Clínica de Fisioterapia"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #4CAF50;" />
+            <Label text="Faça o gerenciamento completo da sua clínica de forma simples e intuitiva."
+                   style="-fx-font-size: 16px; -fx-text-fill: #555;" />
+            <Label text="Utilize o menu lateral para navegar pelas funcionalidades do sistema."
+                   style="-fx-font-size: 14px; -fx-text-fill: #777;" />
+        </VBox>
+    </center>
+
+    <!-- Rodapé -->
+    <bottom>
+        <HBox style="-fx-background-color: #4CAF50; -fx-padding: 10;" spacing="10" alignment="CENTER">
+            <Label text="© 2023 Clínica de Fisioterapia - Todos os direitos reservados"
+                   style="-fx-font-size: 12px; -fx-text-fill: white;" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label text="Versão 1.0"
+                   style="-fx-font-size: 12px; -fx-text-fill: white;" />
+        </HBox>
+    </bottom>
+</BorderPane>
