@@ -1,0 +1,29 @@
+.container {
+    -fx-background-color: #2d7091;
+}
+
+.button {
+    -fx-background-radius: 10;
+    -fx-background-color: #6eb2da;
+    -fx-font-size: 20;
+    -fx-font-family: "Roboto Light";
+    -fx-text-fill: #444444;
+}
+
+.button:pressed {
+    -fx-effect: dropshadow(two-pass-box, #444444, 20,0,0,0);
+}
+
+.text-field {
+    -fx-background-radius: 10;
+    -fx-font-size: 20;
+    -fx-font-family: "Roboto Light";
+    -fx-focus-color: transparent ;
+    -fx-faint-focus-color: transparent ;
+}
+
+.text {
+    -fx-font-size: 20;
+    -fx-font-family: "Roboto Light";
+    -fx-fill: #444444;
+}

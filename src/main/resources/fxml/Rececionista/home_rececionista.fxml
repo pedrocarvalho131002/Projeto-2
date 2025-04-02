@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Pos?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projeto2.controllers.Rececionista.HomeRececionistaController"
+            style="-fx-font-family: 'Arial';"
+            stylesheets="@../../styles/home.css">
+
+    <!-- Topo com cabeçalho -->
+    <top>
+        <HBox alignment="CENTER_LEFT"
+              spacing="10"
+              prefHeight="60"
+              style="-fx-background-color: #2ea5af; -fx-padding: 10;">
+        </HBox>
+    </top>
+
+    <!-- Sidebar à esquerda -->
+    <left>
+        <VBox spacing="20" style="-fx-background-color: #2ea5af; -fx-padding: 30;" alignment="TOP_CENTER">
+
+            <!-- Logo no topo -->
+            <ImageView fx:id="logo"
+                       fitWidth="150"
+                       preserveRatio="true" />
+
+            <!-- Espaçador reduzido acima dos botões -->
+            <Region prefHeight="30" />
+
+            <!-- Botões (subiram um pouco) -->
+            <VBox spacing="25" alignment="TOP_CENTER">
+                <Button text="Registar Consulta"
+                        onAction="#handleRegistarConsulta"
+                        styleClass="sidebar-button" />
+
+                <Button text="Editar Consulta"
+                        onAction="#handleEditarConsulta"
+                        styleClass="sidebar-button" />
+
+                <Button text="Listar Consultas"
+                        onAction="#handleListarConsultas"
+                        styleClass="sidebar-button" />
+
+                <Button text="Terminar Sessão"
+                        onAction="#handleLogout"
+                        styleClass="logout-button" />
+            </VBox>
+
+            <!-- Espaçador abaixo dos botões (maior) -->
+            <Region VBox.vgrow="ALWAYS" />
+        </VBox>
+    </left>
+
+    <!-- Área central com mensagem -->
+    <center>
+        <VBox spacing="15" alignment="CENTER"
+              style="-fx-padding: 50;">
+            <Label text="Bem-vindo(a), Rececionista!"
+                   style="-fx-text-fill: #2ea5af; -fx-font-size: 20px; -fx-font-weight: bold;" />
+            <Label text="Gerencie facilmente as consultas da clínica"
+                   style="-fx-font-size: 14px; -fx-text-fill: #333;" />
+            <Label text="Use o menu lateral para registar, editar ou listar consultas."
+                   style="-fx-font-size: 12px; -fx-text-fill: #555;" />
+        </VBox>
+    </center>
+</BorderPane>

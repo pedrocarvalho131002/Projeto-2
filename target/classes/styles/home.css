@@ -1,0 +1,31 @@
+/* Botões da sidebar */
+.sidebar-button {
+    -fx-background-color: #1b4a56;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-pref-width: 160;
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+}
+
+/* Hover: muda cor ao passar o rato */
+.sidebar-button:hover {
+    -fx-background-color: #24627a;
+}
+
+/* Botão de logout */
+.logout-button {
+    -fx-background-color: #FF6347;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-pref-width: 160;
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+}
+
+/* Hover para logout */
+.logout-button:hover {
+    -fx-background-color: #e04a36;
+}

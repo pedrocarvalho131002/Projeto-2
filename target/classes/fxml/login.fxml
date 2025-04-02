@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Pos?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="org.example.projeto2.controllers.LoginController"
+           style="-fx-background-color: linear-gradient(to bottom right, #0f658d, #4194b4);"
+           alignment="CENTER">
+
+    <!-- Caixa branca central -->
+    <VBox spacing="20"
+          alignment="CENTER"
+          maxWidth="350"
+          maxHeight="500"
+          style="-fx-background-color: white;
+                 -fx-padding: 30;
+                 -fx-background-radius: 10;
+                 -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+
+        <!-- Logo -->
+        <ImageView fx:id="logo"
+                   fitWidth="150" fitHeight="150"
+                   preserveRatio="true" />
+
+        <!-- Campo Nº Funcionário -->
+        <HBox spacing="10" alignment="CENTER" maxWidth="Infinity">
+            <Label text="👤" style="-fx-font-size: 16px;" />
+            <TextField fx:id="usernameField"
+                       promptText="Nº Funcionário"
+                       style="-fx-background-radius: 5;
+                              -fx-border-color: #42A9C4;
+                              -fx-border-radius: 5;
+                              -fx-pref-width: 200;" />
+        </HBox>
+
+        <!-- Campo Palavra-Passe -->
+        <HBox spacing="10" alignment="CENTER" maxWidth="Infinity">
+            <Label text="🔒" style="-fx-font-size: 16px;" />
+            <PasswordField fx:id="passwordField"
+                           promptText="Palavra-Passe"
+                           style="-fx-background-radius: 5;
+                                  -fx-border-color: #42A9C4;
+                                  -fx-border-radius: 5;
+                                  -fx-pref-width: 200;" />
+        </HBox>
+
+        <!-- Botões -->
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="loginButton" text="Login"
+                    style="-fx-background-color: #42A9C4;
+                           -fx-text-fill: white;
+                           -fx-font-size: 14px;
+                           -fx-background-radius: 5;"
+                    onAction="#handleLogin" />
+            <Button fx:id="exitButton" text="Sair"
+                    style="-fx-background-color: #999999;
+                           -fx-text-fill: white;
+                           -fx-font-size: 14px;
+                           -fx-background-radius: 5;"
+                    onAction="#handleExit" />
+        </HBox>
+
+        <!-- Mensagem de erro -->
+        <Label fx:id="loginErrorLabel"
+               text=""
+               visible="false"
+               style="-fx-text-fill: red; -fx-font-size: 12px;" />
+    </VBox>
+</StackPane>

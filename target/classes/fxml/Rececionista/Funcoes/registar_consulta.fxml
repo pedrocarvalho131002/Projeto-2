@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projeto2.controllers.Rececionista.RegistarConsultaController"
+            style="-fx-font-family: 'Arial'; -fx-background-color: #f9f9f9;">
+
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <Label text="Registar Consulta"
+                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2ea5af;" />
+
+            <GridPane hgap="15" vgap="15" alignment="CENTER">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" />
+                    <ColumnConstraints prefWidth="250" />
+                </columnConstraints>
+
+                <Label text="Paciente:" GridPane.rowIndex="0" />
+                <TextField fx:id="pacienteField" promptText="Nome do paciente"
+                           GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                <Label text="Funcionário:" GridPane.rowIndex="1" />
+                <TextField fx:id="funcionarioField" promptText="ID do fisioterapeuta"
+                           GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                <Label text="Tipo de Consulta:" GridPane.rowIndex="2" />
+                <ComboBox fx:id="tipoConsultaCombo" promptText="Selecionar tipo"
+                          GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+                <Label text="Data:" GridPane.rowIndex="3" />
+                <DatePicker fx:id="dataPicker" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+                <Label text="Hora:" GridPane.rowIndex="4" />
+                <TextField fx:id="horaField" promptText="HH:mm"
+                           GridPane.rowIndex="4" GridPane.columnIndex="1" />
+
+                <Label text="Estado:" GridPane.rowIndex="5" />
+                <ComboBox fx:id="estadoConsultaCombo" promptText="Selecionar estado"
+                          GridPane.rowIndex="5" GridPane.columnIndex="1" />
+            </GridPane>
+
+            <Button text="Submeter"
+                    onAction="#handleSubmeterConsulta"
+                    style="-fx-background-color: #2ea5af; -fx-text-fill: white; -fx-font-size: 14px;"
+                    maxWidth="150" />
+        </VBox>
+    </center>
+
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+</BorderPane>

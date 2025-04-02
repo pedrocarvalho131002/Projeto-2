@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projeto2.controllers.EditarConsultaController"
+            prefWidth="600" prefHeight="400"
+            style="-fx-font-family: 'Arial'; -fx-padding: 20;">
+
+    <VBox spacing="15">
+        <Label text="Editar Consulta Existente" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <TextField fx:id="consultaIdField" promptText="ID da Consulta" />
+        <TextField fx:id="pacienteIdField" promptText="Novo ID do Paciente" />
+        <TextField fx:id="tipoConsultaField" promptText="Novo Tipo de Consulta (ID)" />
+        <TextField fx:id="funcionarioIdField" promptText="Novo ID do Fisioterapeuta" />
+        <DatePicker fx:id="dataConsultaPicker" />
+        <TextField fx:id="horaConsultaField" promptText="Nova Hora (HH:mm)" />
+        <TextField fx:id="estadoField" promptText="Novo Estado" />
+
+        <Button text="Atualizar Consulta" onAction="#handleAtualizarConsulta" />
+    </VBox>
+</AnchorPane>
