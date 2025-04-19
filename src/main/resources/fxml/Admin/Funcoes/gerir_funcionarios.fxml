@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projeto2.controllers.Admin.GerirFuncionariosController"
+            style="-fx-background-color: #f9f9f9;">
+
+    <top>
+        <HBox alignment="CENTER" style="-fx-padding: 15;">
+            <Label text="Gerir Funcionários"
+                   style="-fx-font-size: 22px; -fx-text-fill: #2ea5af; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+            <!-- Exemplo de layout: listar, criar ou editar funcionários -->
+            <Button text="Listar Funcionários" onAction="#handleListarFuncionarios" />
+            <Button text="Criar Novo Funcionário" onAction="#handleCriarFuncionario" />
+            <Button text="Editar / Apagar Funcionário" onAction="#handleEditarFuncionario" />
+        </VBox>
+    </center>
+</BorderPane>

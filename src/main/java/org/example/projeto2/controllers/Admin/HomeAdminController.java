@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.example.projeto2.ApplicationContextProvider;
 import org.springframework.stereotype.Component;
@@ -29,17 +30,80 @@ public class HomeAdminController {
 
     @FXML
     public void handleGerirFuncionarios(ActionEvent event) {
-        System.out.println("Abrir página de gestão de funcionários...");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Admin/Funcoes/gerir_funcionarios.fxml"));
+            loader.setControllerFactory(ApplicationContextProvider.getApplicationContext()::getBean);
+
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Gerir Funcionários");
+            stage.setScene(new Scene(root, 600, 400));
+            stage.setResizable(true);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initOwner(((Node) event.getSource()).getScene().getWindow());
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText("Erro ao abrir Gerir Funcionários");
+            alert.setContentText("Não foi possível carregar o ecrã de Gerir Funcionários.");
+            alert.showAndWait();
+        }
     }
 
     @FXML
     public void handleGerirConsultas(ActionEvent event) {
-        System.out.println("Abrir página de gestão de consultas...");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Admin/Funcoes/gerir_consultas.fxml"));
+            loader.setControllerFactory(ApplicationContextProvider.getApplicationContext()::getBean);
+
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Gerir Consultas");
+            stage.setScene(new Scene(root, 600, 400));
+            stage.setResizable(true);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initOwner(((Node) event.getSource()).getScene().getWindow());
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText("Erro ao abrir Gerir Consultas");
+            alert.setContentText("Não foi possível carregar o ecrã de Gerir Consultas.");
+            alert.showAndWait();
+        }
     }
 
     @FXML
     public void handleVerEstatisticas(ActionEvent event) {
-        System.out.println("Abrir página de estatísticas...");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Admin/Funcoes/ver_estatisticas.fxml"));
+            loader.setControllerFactory(ApplicationContextProvider.getApplicationContext()::getBean);
+
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Ver Estatísticas");
+            stage.setScene(new Scene(root, 600, 400));
+            stage.setResizable(true);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initOwner(((Node) event.getSource()).getScene().getWindow());
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText("Erro ao abrir Ver Estatísticas");
+            alert.setContentText("Não foi possível carregar o ecrã de Estatísticas.");
+            alert.showAndWait();
+        }
     }
 
     @FXML
@@ -47,7 +111,6 @@ public class HomeAdminController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
 
-            // Garante injeção correta do LoginController
             loader.setControllerFactory(ApplicationContextProvider.getApplicationContext()::getBean);
 
             Parent loginRoot = loader.load();

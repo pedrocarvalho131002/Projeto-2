@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projeto2.controllers.Admin.VerEstatisticasController"
+            style="-fx-background-color: #f9f9f9;">
+
+    <top>
+        <HBox alignment="CENTER" style="-fx-padding: 15;">
+            <Label text="Estatísticas da Clínica"
+                   style="-fx-font-size: 22px; -fx-text-fill: #2ea5af; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20" style="-fx-padding: 20;">
+            <!-- Exemplo: gráficos ou relatórios -->
+            <Label text="Exemplo: Total de Consultas / Funcionários / etc." />
+            <Button text="Gerar Relatório" onAction="#handleGerarRelatorio" />
+        </VBox>
+    </center>
+</BorderPane>

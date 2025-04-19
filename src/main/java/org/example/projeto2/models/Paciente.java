@@ -122,4 +122,11 @@ public class Paciente {
         this.lesoes = lesoes;
     }
 
+    //campo do nome
+    @Override
+    public String toString() {
+        return nome;
+    }
+
+
 }

@@ -44,4 +44,8 @@ public class TipoFuncionario {
         this.funcionarios = funcionarios;
     }
 
+    @Override
+    public String toString() {
+        return cargo;
+    }
 }

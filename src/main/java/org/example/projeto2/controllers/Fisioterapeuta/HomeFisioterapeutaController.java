@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.example.projeto2.ApplicationContextProvider;
 import org.springframework.stereotype.Component;
@@ -30,13 +31,55 @@ public class HomeFisioterapeutaController {
 
     @FXML
     public void handleMinhasConsultas(ActionEvent event) {
-        System.out.println("Abrir página de listagem das minhas consultas...");
-        // Implementar troca de cena se necessário
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Fisioterapeuta/Funcoes/minhas_consultas.fxml"));
+            loader.setControllerFactory(ApplicationContextProvider.getApplicationContext()::getBean);
+
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Minhas Consultas");
+            stage.setScene(new Scene(root, 800, 600));
+            stage.setResizable(true);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initOwner(((Node) event.getSource()).getScene().getWindow());
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText("Erro ao abrir Minhas Consultas");
+            alert.setContentText("Não foi possível carregar o ecrã de Minhas Consultas.");
+            alert.showAndWait();
+        }
     }
+
 
     @FXML
     public void handleAlterarEstado(ActionEvent event) {
-        System.out.println("Abrir página para alterar estado da consulta...");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Fisioterapeuta/Funcoes/alterar_estado.fxml"));
+            loader.setControllerFactory(ApplicationContextProvider.getApplicationContext()::getBean);
+
+            Parent root = loader.load();
+
+            Stage popupStage = new Stage();
+            popupStage.setTitle("Alterar Estado");
+            popupStage.setScene(new Scene(root, 500, 300));
+            popupStage.setResizable(false);
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.initOwner(((Node) event.getSource()).getScene().getWindow());
+            popupStage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText("Erro ao abrir Alterar Estado");
+            alert.setContentText("Não foi possível carregar o ecrã de Alterar Estado.");
+            alert.showAndWait();
+        }
     }
 
     @FXML

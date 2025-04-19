@@ -1,24 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.projeto2.controllers.EditarConsultaController"
-            prefWidth="600" prefHeight="400"
-            style="-fx-font-family: 'Arial'; -fx-padding: 20;">
+            fx:controller="org.example.projeto2.controllers.Rececionista.EditarConsultaController"
+            prefWidth="500" prefHeight="600"
+            style="-fx-background-color: #f9f9f9;">
 
-    <VBox spacing="15">
-        <Label text="Editar Consulta Existente" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+    <VBox alignment="CENTER" spacing="20" layoutX="50" layoutY="30"
+          prefWidth="400" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
 
-        <TextField fx:id="consultaIdField" promptText="ID da Consulta" />
-        <TextField fx:id="pacienteIdField" promptText="Novo ID do Paciente" />
-        <TextField fx:id="tipoConsultaField" promptText="Novo Tipo de Consulta (ID)" />
-        <TextField fx:id="funcionarioIdField" promptText="Novo ID do Fisioterapeuta" />
-        <DatePicker fx:id="dataConsultaPicker" />
-        <TextField fx:id="horaConsultaField" promptText="Nova Hora (HH:mm)" />
-        <TextField fx:id="estadoField" promptText="Novo Estado" />
+        <!-- Título -->
+        <Label text="Editar Consulta Existente"
+               style="-fx-font-size: 22px; -fx-text-fill: #2ea5af; -fx-font-weight: bold;" />
 
-        <Button text="Atualizar Consulta" onAction="#handleAtualizarConsulta" />
+        <!-- Grade para os campos -->
+        <GridPane hgap="10" vgap="12">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" />
+                <ColumnConstraints prefWidth="250" />
+            </columnConstraints>
+
+            <!-- ID da Consulta -->
+            <Label text="ID da Consulta:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <TextField fx:id="consultaIdField"
+                       promptText="ID da Consulta"
+                       GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+            <!-- Paciente -->
+            <Label text="Paciente:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+            <ComboBox fx:id="pacienteCombo"
+                      promptText="Selecione Paciente"
+                      prefWidth="220"
+                      GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+            <!-- Tipo de Consulta -->
+            <Label text="Tipo de Consulta:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+            <ComboBox fx:id="tipoConsultaCombo"
+                      promptText="Selecione Tipo"
+                      prefWidth="220"
+                      GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+            <!-- Funcionário -->
+            <Label text="Funcionário:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+            <ComboBox fx:id="funcionarioCombo"
+                      promptText="Selecione Funcionário"
+                      prefWidth="220"
+                      GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+            <!-- Data -->
+            <Label text="Data:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+            <DatePicker fx:id="dataConsultaPicker"
+                        GridPane.rowIndex="4" GridPane.columnIndex="1" prefWidth="220" />
+
+            <!-- Hora -->
+            <Label text="Hora:" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+            <TextField fx:id="horaConsultaField"
+                       promptText="HH:mm"
+                       GridPane.rowIndex="5" GridPane.columnIndex="1" prefWidth="220" />
+
+            <!-- Estado -->
+            <Label text="Estado:" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+            <ComboBox fx:id="estadoConsultaCombo"
+                      promptText="Selecione Estado"
+                      prefWidth="220"
+                      GridPane.rowIndex="6" GridPane.columnIndex="1"
+                      disable="true" />
+        </GridPane>
+
+        <!-- Botão Submeter -->
+        <Button text="Atualizar Consulta"
+                onAction="#handleAtualizarConsulta"
+                style="-fx-background-color: #2ea5af; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 5;"
+                prefWidth="150"/>
     </VBox>
 </AnchorPane>

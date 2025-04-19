@@ -12,7 +12,7 @@ public class Funcionario {
     private Integer id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_tipo")
+    @JoinColumn(name = "id_tipo", nullable = false)
     private TipoFuncionario idTipo;
 
     @Column(name = "nif", nullable = false, length = 20)
@@ -129,5 +129,12 @@ public class Funcionario {
     public void setNTelemovel(String nTelemovel) {
         this.nTelemovel = nTelemovel;
     }
+
+    //campo do nome
+    @Override
+    public String toString() {
+        return nome;
+    }
+
 
 }

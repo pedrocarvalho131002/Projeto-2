@@ -21,6 +21,9 @@ import java.util.Optional;
 @Component
 public class LoginController {
 
+    // Guardar aqui o ID do fisioterapeuta logado
+    public static Integer fisioterapeutaLogadoId = null;
+
     @Autowired
     private LoginService loginService;
 
@@ -95,11 +98,16 @@ public class LoginController {
     private void redirectToHome(LoginResult loginResult) {
         try {
             // Aqui podes redirecionar consoante o cargo
-            String cargo = loginResult.getCargo(); // supondo que cargo está disponível no LoginResult
+            String cargo = loginResult.getCargo(); // cargo do funcionário
+            Integer funcionarioId = loginResult.getId(); // ID do funcionário
 
             String fxmlPath = switch (cargo.toLowerCase()) {
-                case "administrador" -> "/fxml/Admin/home_admin.fxml";
-                case "fisioterapeuta" -> "/fxml/Fisioterapeuta/home_fisioterapeuta.fxml";
+                case "admin" -> "/fxml/Admin/home_admin.fxml";
+                case "fisioterapeuta" -> {
+                    // Se for fisioterapeuta, guarda o ID
+                    fisioterapeutaLogadoId = funcionarioId;
+                    yield "/fxml/Fisioterapeuta/home_fisioterapeuta.fxml";
+                }
                 case "rececionista" -> "/fxml/Rececionista/home_rececionista.fxml";
                 default -> "/fxml/home.fxml";
             };

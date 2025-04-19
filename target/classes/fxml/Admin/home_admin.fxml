@@ -20,16 +20,17 @@
         </HBox>
     </top>
 
-    <!-- Sidebar à esquerda -->
+    <!-- Barra lateral -->
     <left>
-        <VBox spacing="20" style="-fx-background-color: #2ea5af; -fx-padding: 30;" alignment="CENTER">
+        <VBox spacing="20" alignment="TOP_CENTER"
+              style="-fx-background-color: #2ea5af; -fx-padding: 30;">
 
             <!-- Logo topo -->
             <ImageView fx:id="logo"
                        fitWidth="150"
                        preserveRatio="true" />
 
-            <!-- Espaçador acima dos botões -->
+            <!-- Pequeno espaçador acima dos botões -->
             <Region prefHeight="30" />
 
             <!-- Botões -->
@@ -56,7 +57,7 @@
         </VBox>
     </left>
 
-    <!-- Área central com mensagem -->
+    <!-- Área central -->
     <center>
         <VBox spacing="15" alignment="CENTER"
               style="-fx-padding: 50;">
@@ -64,7 +65,7 @@
                    style="-fx-text-fill: #2ea5af; -fx-font-size: 20px; -fx-font-weight: bold;" />
             <Label text="Gerencie os recursos da clínica com eficiência."
                    style="-fx-font-size: 14px; -fx-text-fill: #333;" />
-            <Label text="Use o menu lateral para gerir funcionário e consultas e consultar as estatísticas."
+            <Label text="Use o menu lateral para gerir funcionários, consultas e consultar estatísticas."
                    style="-fx-font-size: 12px; -fx-text-fill: #555;" />
         </VBox>
     </center>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projeto2.controllers.Fisioterapeuta.MinhasConsultasController"
+            style="-fx-background-color: #f9f9f9;">
+
+    <top>
+        <HBox alignment="CENTER" style="-fx-padding: 15;">
+            <Label text="Minhas Consultas"
+                   style="-fx-font-size: 22px; -fx-text-fill: #2ea5af; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+            <TableView fx:id="tabelaConsultas" prefWidth="600" prefHeight="400">
+                <columns>
+                    <TableColumn fx:id="colIdConsulta" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colPaciente" text="Paciente" prefWidth="120"/>
+                    <TableColumn fx:id="colTipo" text="Tipo Consulta" prefWidth="120"/>
+                    <TableColumn fx:id="colData" text="Data" prefWidth="100"/>
+                    <TableColumn fx:id="colHora" text="Hora" prefWidth="80"/>
+                    <TableColumn fx:id="colEstado" text="Estado" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

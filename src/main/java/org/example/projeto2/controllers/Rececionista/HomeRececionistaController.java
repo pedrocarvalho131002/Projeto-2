@@ -59,13 +59,60 @@ public class HomeRececionistaController {
 
     @FXML
     public void handleEditarConsulta(ActionEvent event) {
-        System.out.println("Abrir página de edição de consulta...");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Rececionista/Funcoes/editar_consulta.fxml"));
+
+            // Usa o contexto do Spring para injetar corretamente o controller
+            loader.setControllerFactory(ApplicationContextProvider.getApplicationContext()::getBean);
+
+            Parent root = loader.load();
+
+            Stage popupStage = new Stage();
+            popupStage.setTitle("Editar Consulta");
+            popupStage.setScene(new Scene(root, 600, 400));
+            popupStage.setResizable(false);
+
+            // Torna-o um pop-up modal, bloqueando a janela anterior
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.initOwner(((Node) event.getSource()).getScene().getWindow());
+
+            popupStage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText("Erro ao abrir a página");
+            alert.setContentText("Não foi possível abrir o ecrã de edição de consulta.");
+            alert.showAndWait();
+        }
     }
+
+
 
     @FXML
     public void handleListarConsultas(ActionEvent event) {
-        System.out.println("Abrir listagem de consultas...");
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/fxml/Rececionista/Funcoes/listar_consultas.fxml")
+            );
+            loader.setControllerFactory(ApplicationContextProvider.getApplicationContext()::getBean);
+
+            Parent root = loader.load();
+
+            Stage popupStage = new Stage();
+            popupStage.setTitle("Listar Consultas");
+            popupStage.setScene(new Scene(root, 800, 600));
+            popupStage.setResizable(true);
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.initOwner(((Node) event.getSource()).getScene().getWindow());
+            popupStage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 
     @FXML
     public void handleLogout(ActionEvent event) {

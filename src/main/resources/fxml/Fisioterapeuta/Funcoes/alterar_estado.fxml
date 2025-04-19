@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projeto2.controllers.Fisioterapeuta.AlterarEstadoController"
+            style="-fx-background-color: #f9f9f9;">
+
+    <top>
+        <HBox alignment="CENTER" style="-fx-padding: 15;">
+            <Label text="Alterar Estado da Consulta"
+                   style="-fx-font-size: 22px; -fx-text-fill: #2ea5af; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="15" style="-fx-padding: 20;">
+            <!-- ID da consulta -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="ID da Consulta:"/>
+                <TextField fx:id="consultaIdField" promptText="Digite o ID" />
+            </HBox>
+
+            <!-- Novo estado -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Novo Estado:"/>
+                <ComboBox fx:id="estadoCombo" />
+            </HBox>
+
+            <!-- Botão para submeter -->
+            <Button text="Atualizar Estado" onAction="#handleAtualizarEstado"
+                    style="-fx-background-color: #2ea5af; -fx-text-fill: white; -fx-font-size: 14px;"
+                    prefWidth="150"/>
+        </VBox>
+    </center>
+</BorderPane>

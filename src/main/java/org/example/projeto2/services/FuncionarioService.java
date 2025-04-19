@@ -18,6 +18,10 @@ public class FuncionarioService {
         return repository.findAll();
     }
 
+    public List<Funcionario> listarFisioterapeutas() {
+        return repository.findByIdTipo_Id(1);  // 1 corresponde ao tipo "Fisioterapeuta"
+    }
+
     public Optional<Funcionario> buscarPorId(Integer id) {
         return repository.findById(id);
     }

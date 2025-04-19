@@ -44,4 +44,11 @@ public class TipoConsulta {
         this.consultas = consultas;
     }
 
+    //para aparecer formatado no ecrã
+    @Override
+    public String toString() {
+        return metodo;
+    }
+
+
 }
