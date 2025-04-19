@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projeto2.controllers.Admin.funcionarios.CriarFuncionarioController"
+            style="-fx-background-color: #f9f9f9;">
+
+    <top>
+        <HBox alignment="CENTER" style="-fx-padding: 15;">
+            <Label text="Criar Novo Funcionário"
+                   style="-fx-font-size: 22px; -fx-text-fill: #2ea5af; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="15" style="-fx-padding: 20;">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Nome:" />
+                <TextField fx:id="nomeField" />
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Cargo:" />
+                <ComboBox fx:id="cargoCombo" />
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Email:" />
+                <TextField fx:id="emailField" />
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="NIF:"/>
+                <TextField fx:id="nifField"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Código Postal:"/>
+                <TextField fx:id="codigoPostalField"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Localidade:"/>
+                <TextField fx:id="localidadeField"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Rua:"/>
+                <TextField fx:id="ruaField"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Cidade:"/>
+                <TextField fx:id="cidadeField"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Password:"/>
+                <PasswordField fx:id="passwordField"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Telemóvel:"/>
+                <TextField fx:id="nTelemovelField"/>
+            </HBox>
+
+            <Button text="Criar" onAction="#handleCriar" />
+        </VBox>
+    </center>
+</BorderPane>

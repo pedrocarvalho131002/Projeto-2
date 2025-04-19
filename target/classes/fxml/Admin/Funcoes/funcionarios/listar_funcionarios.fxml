@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projeto2.controllers.Admin.funcionarios.ListarFuncionariosController"
+            style="-fx-background-color: #f9f9f9;">
+
+    <top>
+        <HBox alignment="CENTER" style="-fx-padding: 15;">
+            <Label text="Listar Funcionários"
+                   style="-fx-font-size: 22px; -fx-text-fill: #2ea5af; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+            <TableView fx:id="tabelaFuncionarios" prefWidth="600" prefHeight="400">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50" />
+                    <TableColumn fx:id="colNome" text="Nome" prefWidth="150" />
+                    <TableColumn fx:id="colCargo" text="Cargo" prefWidth="100" />
+                    <TableColumn fx:id="colEmail" text="Email" prefWidth="150" />
+                    <TableColumn fx:id="colNif"              text="NIF"            prefWidth="100"/>
+                    <TableColumn fx:id="colCodigoPostal"     text="Cód. Postal"    prefWidth="90"/>
+                    <TableColumn fx:id="colLocalidade"       text="Localidade"     prefWidth="110"/>
+                    <TableColumn fx:id="colRua"              text="Rua"            prefWidth="140"/>
+                    <TableColumn fx:id="colCidade"           text="Cidade"         prefWidth="100"/>
+                    <TableColumn fx:id="colTelemovel"        text="Telemóvel"      prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

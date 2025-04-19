@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projeto2.controllers.Admin.funcionarios.EditarApagarFuncionarioController"
+            prefWidth="650" prefHeight="600"
+            style="-fx-background-color:#f9f9f9">
+
+    <VBox alignment="TOP_CENTER" spacing="18" AnchorPane.topAnchor="15"
+          AnchorPane.leftAnchor="15" AnchorPane.rightAnchor="15">
+
+        <Label text="Editar / Apagar Funcionário"
+               style="-fx-font-size:22px; -fx-text-fill:#2ea5af; -fx-font-weight:bold"/>
+
+        <!-- Linha para ID + botão carregar -->
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="idField" promptText="ID do Funcionário" prefWidth="250"/>
+            <Button text="Carregar Dados" onAction="#handleCarregarDados"/>
+        </HBox>
+
+        <!-- Grade com todos os campos -->
+        <GridPane hgap="10" vgap="12">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT"/>
+                <ColumnConstraints prefWidth="280"/>
+            </columnConstraints>
+
+            <Label text="Nome:"           GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField  fx:id="nomeField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Cargo:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cargoCombo" prefWidth="200"
+                      GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Email:"           GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="emailField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="NIF:"             GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="nifField"   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Código Postal:"    GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="codPostalField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <Label text="Localidade:"      GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <TextField fx:id="localidadeField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+            <Label text="Rua:"             GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+            <TextField fx:id="ruaField"    GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+            <Label text="Cidade:"          GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+            <TextField fx:id="cidadeField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+            <Label text="Password:"        GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="passwordField"
+                           GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+            <Label text="Telemóvel:"       GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+            <TextField fx:id="teleField"   GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <!-- Botões -->
+        <HBox spacing="25" alignment="CENTER">
+            <Button text="Editar" onAction="#handleEditar"/>
+            <Button text="Apagar" onAction="#handleApagar"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

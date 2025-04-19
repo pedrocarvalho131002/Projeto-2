@@ -3,6 +3,7 @@ package org.example.projeto2.controllers.Rececionista;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import org.example.projeto2.models.*;
 import org.example.projeto2.models.Enum.EstadoConsulta;
 import org.example.projeto2.services.*;
@@ -132,6 +133,8 @@ public class EditarConsultaController {
 
         consultaService.salvar(consultaEmEdicao);
         mostrarAlerta("Sucesso", "Consulta atualizada com sucesso!");
+
+        ((Stage) consultaIdField.getScene().getWindow()).close();
     }
 
     /* =====================================================
