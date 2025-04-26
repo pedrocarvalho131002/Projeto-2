@@ -1,25 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.*?>
+<?import javafx.scene.chart.PieChart?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.example.projeto2.controllers.Admin.VerEstatisticasController"
             style="-fx-background-color: #f9f9f9;">
 
     <top>
-        <HBox alignment="CENTER" style="-fx-padding: 15;">
-            <Label text="Estatísticas da Clínica"
-                   style="-fx-font-size: 22px; -fx-text-fill: #2ea5af; -fx-font-weight: bold;" />
+        <HBox alignment="CENTER" style="-fx-padding: 20;">
+            <Label text="📊 Estatísticas da Clínica"
+                   style="-fx-font-size: 26px; -fx-text-fill: #2ea5af; -fx-font-weight: bold;" />
         </HBox>
     </top>
 
     <center>
-        <VBox alignment="CENTER" spacing="20" style="-fx-padding: 20;">
-            <!-- Exemplo: gráficos ou relatórios -->
-            <Label text="Exemplo: Total de Consultas / Funcionários / etc." />
-            <Button text="Gerar Relatório" onAction="#handleGerarRelatorio" />
+        <VBox alignment="TOP_CENTER" spacing="25" style="-fx-padding: 30;">
+
+            <!-- Labels de contagem -->
+            <VBox alignment="CENTER" spacing="10">
+                <Label fx:id="totalRealizadasLabel"
+                       style="-fx-font-size: 18px; -fx-text-fill: #333;" />
+                <Label fx:id="totalAgendadasLabel"
+                       style="-fx-font-size: 18px; -fx-text-fill: #333;" />
+                <Label fx:id="totalPagamentosLabel"
+                       style="-fx-font-size: 18px; -fx-text-fill: #333;" />
+            </VBox>
+
+            <!-- Subtítulo -->
+            <Label text="Distribuição dos Tipos de Pagamento"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2ea5af; -fx-padding: 20 0 10 0;" />
+
+            <!-- Gráfico -->
+            <PieChart fx:id="graficoTiposPagamento"
+                      prefWidth="400" prefHeight="300"
+                      style="-fx-font-size: 14px;" />
         </VBox>
     </center>
+
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-padding: 20;">
+            <Button text="Atualizar Estatísticas"
+                    onAction="#handleGerarRelatorio"
+                    style="-fx-background-color: #2ea5af; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-background-radius: 10;"
+                    prefWidth="220" prefHeight="40"/>
+        </HBox>
+    </bottom>
+
 </BorderPane>

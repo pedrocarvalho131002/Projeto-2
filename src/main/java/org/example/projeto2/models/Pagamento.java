@@ -68,4 +68,14 @@ public class Pagamento {
         this.dataPagamento = dataPagamento;
     }
 
+    public double getValorDouble() {
+        return valor != null ? valor.doubleValue() : 0.0;
+    }
+
+    public TipoPagamento getTipoPagamento() {
+        return idTipoPagamento;
+    }
+
+
+
 }

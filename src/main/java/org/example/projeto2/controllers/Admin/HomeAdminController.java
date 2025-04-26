@@ -90,7 +90,8 @@ public class HomeAdminController {
 
             Stage stage = new Stage();
             stage.setTitle("Ver Estatísticas");
-            stage.setScene(new Scene(root, 600, 400));
+            stage.setScene(new Scene(root, 900, 700));
+            stage.centerOnScreen();
             stage.setResizable(true);
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.initOwner(((Node) event.getSource()).getScene().getWindow());
